@@ -29,9 +29,8 @@ name: Deploy to Amazon ECS
 on:
   push:
     branches: [ "main" ]
-permissions:
-  contents: read
-  id-token: write
+
+
 
 env:
   AWS_REGION: ${{ vars.AWS_REGION }}                # set this to your preferred AWS region, e.g. us-west-1
@@ -42,9 +41,9 @@ env:
                                                # file, e.g. .aws/task-definition.json
   CONTAINER_NAME: ${{ vars.MY_CONTAINER_NAME  }}         # set this to the name of the container in the
                                                # containerDefinitions section of your task definition
-
 permissions:
   contents: read
+  id-token: write
 
 jobs:
   deploy:
